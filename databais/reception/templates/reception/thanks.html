@@ -1,0 +1,35 @@
+{% extends "reception/base.html" %}
+
+{% block content %}
+
+    <h2>Thanks for checking in!</h2>
+    <br><br>
+    <p>
+        Redirecting in <span id="countdown">5</span>...
+    </p>
+
+    <script type="text/javascript">
+            // Countdown
+        var countdown_seconds = 4;
+            {% if event %}
+                link_to_homepage = "{% url 'reception:event' %}";
+            {% else %}
+                link_to_homepage = "{% url 'reception:welcome' %}";
+            {% endif %}
+        console.log(link_to_homepage);
+        function countdown() {
+            countdown_seconds -= 1;
+            if (countdown_seconds < 0) {
+                // Change your redirection link here
+                window.location = link_to_homepage;
+            } else {
+                // Update remaining seconds
+                document.getElementById("countdown").innerHTML = countdown_seconds;
+                // Count down using javascript
+                window.setTimeout("countdown()", 1000);
+            }
+        }
+        countdown();
+    </script>
+
+{% endblock %}

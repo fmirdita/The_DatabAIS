@@ -1,0 +1,215 @@
+html {
+   height: 100%;
+}
+
+body {
+    background-color: #003162;
+    font-size: 1.25vw;
+    padding: 20px 40px;
+    color: #707070;
+    height: 100%;
+}
+
+
+h2 {
+    font-size: 3vw;
+    font-family: 'Handlee';
+}
+
+h3 {
+    font-size: 36px;
+    font-size: 1.75vw;
+    font-weight: inherit;
+    width: 60%;
+    margin: auto;
+}
+
+p {
+
+}
+
+label {
+    font-weight: 300;
+}
+
+p label {
+    font-weight: inherit;
+}
+
+.outer_content {
+    text-align: center;
+    background-color: white;
+    height: 100%;
+    min-height: 350px;
+    width: 60%;
+    margin: auto;
+    padding: 40px;
+    border-radius: 4px;
+}
+
+.middle {
+    text-align: center;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 40px;
+    border-radius: 4px;
+    position: absolute;
+    width: 60%;
+    min-width: 415px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+form {
+    margin: 0 auto;
+    width: 50%;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+form .button {
+    text-align: center;
+}
+
+form#scan_field, form#email {
+    text-align: center;
+    border: none;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 2;
+}
+
+#email_box {
+    width:50%;
+    z-index: 3;
+}
+
+.close {
+    color: #aaa;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 1;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#triangle-bottomleft {
+	width: 0;
+	height: 0;
+	border-bottom: 700px solid #003162;
+	border-right: 300px solid transparent;
+}
+
+#scan_field {
+    color: white;
+}
+
+#id_rfid {
+    border: none;
+    outline: none;
+}
+
+.btn {
+    font-size: 1.5vw;
+    color: #fff;
+    background-image: linear-gradient(to bottom,#70D4EC 0,#10B7DF 100%);
+    border: #10B7DF;
+    /*border-radius: 20px;*/
+}
+.btn:hover, .btn:focus {
+    color: #ddd;
+}
+
+input {
+    width: 100%;
+    font-style: italic;
+    font-weight: inherit;
+    letter-spacing: 0px;
+    text-align: center;
+    /*border-radius: 5px;*/
+}
+
+input[type="checkbox"], input[type="radio"]{
+    width: 10px;
+}
+
+ul.errorlist {
+    list-style: none;
+    color: red;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+ul#id_service {
+    list-style: none;
+    text-align: left;
+}
+
+.form-table{
+    margin: 0 auto;
+}
+
+.form-table td,
+.form-table th
+{
+    text-align:right;
+    padding: 5px;
+}
+
+.form-table td + td,
+.form-table th + th
+{
+    text-align:left;
+}
+
+.tooltipi {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltipi .tooltiptext {
+    font-size: .8em;
+    visibility: hidden;
+    width: 25vw;
+    background-color: #003162;
+    color: #fff;
+    text-align: left;
+    border-radius: 4px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: -150%;
+    left: 175%;
+}
+
+.tooltipi .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+.tooltipi:hover .tooltiptext {
+    visibility: visible;
+}

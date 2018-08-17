@@ -1,0 +1,50 @@
+{% extends "reception/base.html" %}
+
+{% block content %}
+
+        {% if event %}
+            <h3>{{ greeting }}</h3>
+            <h2>{{ event.title }}</h2>
+        {% else %}
+            <h2>{{ greeting }}</h2>
+        {% endif %}<br>
+
+        <h3>{{ sign_in_blurb }}</h3><br><br>
+
+        <button onclick="on()" type="button" class="border-0 btn">No Cal ID?</button>
+
+        <form id="scan_field" autocomplete="off" method="POST" class="post-form">
+
+            {% csrf_token %}
+            {{ form.rfid }}
+
+        {% if event %}
+            <input type="hidden" name="event_id" value="{{ event.id }}">
+        {% endif %}
+
+        </form>
+
+<div id="overlay">
+    <div id="email_box" class="middle">
+        <span class="close" onclick="off()">x</span><br><br>
+
+        <p>Please enter your email address:</p><br>
+
+        <form id="email"autocomplete="off" method="POST" class="post-form">
+
+            {%  csrf_token %}
+            {{ form.email.errors }}
+            {{ form.email }}
+
+            {% if event %}
+                <input type="hidden" name="event_id" value="{{ event.id }}">
+            {% endif %}
+
+            <br><br>
+            <button type="submit" class="border-0 btn">Sign In</button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

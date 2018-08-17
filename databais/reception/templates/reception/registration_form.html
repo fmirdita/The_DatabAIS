@@ -1,0 +1,36 @@
+<p>
+    Please provide us with a few details, just this once.
+    <a class="tooltipi"><span class="glyphicon glyphicon-info-sign"></span>
+        <span class="tooltiptext">The AIS collects data to inform our growth and improve our services.
+            Thanks for your help, and let us know if you have any questions!</span>
+    </a>
+</p>
+<table class="form-table">
+    <tr>
+        <td>{{ registration_form.first_name.label_tag }}</td>
+        <td>{{ registration_form.first_name }}</td>
+    </tr>
+    <tr>{{ registration_form.first_name.error }}</tr>
+    <tr>
+        <td>{{ registration_form.last_name.label_tag }}</td>
+        <td>{{ registration_form.last_name }}</td>
+    </tr>
+    <tr>{{ registration_form.last_name.error }}</tr>
+    <tr>
+        <td>{{ registration_form.email.label_tag }}</td>
+        <td>{{ registration_form.email }}</td>
+    </tr>
+    <tr>{{ registration_form.email.error }}</tr>
+    <tr>
+        <td>{{ registration_form.department.label_tag }}</td>
+        <td>{{ registration_form.department }}</td>
+    </tr>
+    <tr>{{ registration_form.department.error }}</tr>
+    <tr>
+        <td>{{ registration_form.add_to_mailing_list }} </td>
+        <td> <label> Add me to the mailing list! </label> </td>
+    </tr>
+    <tr>{{ registration_form.add_to_mailing_list.error }}</tr>
+</table>
+
+<input name="rfid" type="hidden" value="{{ registration_form.rfid.value }}"/>
